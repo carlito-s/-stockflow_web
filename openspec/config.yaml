@@ -1,0 +1,42 @@
+schema: spec-driven
+
+context: |
+  Tech stack: React 19 + TypeScript + Vite 6 + Bun
+  API: Express REST at http://localhost:3000/api (JWT auth)
+  Architecture: SPA frontend, feature-based folder structure
+  Testing: Not yet installed (project is brand new)
+  Styling: TBD (recommend Tailwind CSS)
+  Persistence: hybrid (openspec files + Engram)
+
+strict_tdd: false
+notes: |
+  No test runner available yet — project is initialized but has no code.
+  Enable strict_tdd after first test setup commit.
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Consider impact on role-based access (ADMIN/OPERATOR)
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+    - Reference API contract in doc/API_CONTRACT.md
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+    - Prefer feature-based folder structure over type-based
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+    - Each task should produce a working feature or fix
+  apply:
+    - Follow existing code patterns
+    - Use Bun as package manager (bun add, bun run)
+    - tdd: false
+    - test_command: ""
+  verify:
+    test_command: ""
+    build_command: "bun run build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
