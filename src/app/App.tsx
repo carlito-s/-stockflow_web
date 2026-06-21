@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import { RequireAuth } from "@/components/guards/RequireAuth"
 import { RequireRole } from "@/components/guards/RequireRole"
 import { GuestOnly } from "@/components/guards/GuestOnly"
@@ -16,6 +16,8 @@ export function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
         <Route element={<GuestOnly />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
